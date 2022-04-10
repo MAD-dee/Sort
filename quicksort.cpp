@@ -16,7 +16,7 @@ void quicksort(int *a, int l, int r){
         return ;
     }
     int i,j,base,tmp;
-    i = l, j = r;
+    i = l, j = r;//哨兵,注意j先动
     swap(a,l,rand()%((r-l+1))+l);
     base = a[l];//选取最左边数为基准
     while(i < j){
@@ -27,9 +27,7 @@ void quicksort(int *a, int l, int r){
             i++;
         }
         if (i < j){
-            tmp = a[i];
-            a[i] = a[j];
-            a[j] = tmp;
+            swap(a,i,j);
         }
     }
     //基准数归位
